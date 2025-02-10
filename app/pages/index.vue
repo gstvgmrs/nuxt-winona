@@ -1,14 +1,17 @@
 <template>
-  <div class="container mx-auto">
-    <p>So much space for content</p>
-    <p>This is a test store:</p>
-    <p>Current count:
-      {{ counterStore.count }}</p>
-    <button class="btn btn-primary" @click="counterStore.increment()">Increment</button>
+  <div>
+    <div v-for="article in articles" :key="article.id">
+      <ArticleCard :article="article" class="mt-4" />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const counterStore = useCounterStore();
+const articlesStore = useArticlesStore()
+const { articles }  = storeToRefs(articlesStore)
+
+await useAsyncData(async () => {
+  await articlesStore.fetchArticles()
+})
 </script>
 <style lang="scss" scoped></style>
