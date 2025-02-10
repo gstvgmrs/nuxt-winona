@@ -1,8 +1,9 @@
 # Winona Website Frontend Challenge
 
-## Setup
+## Setup environment
 `cp .env.example .env`
-| I already filled it out to make it easier, but I am aware that in a real environment these values ​​would not be public
+
+I already filled it out to make it easier, but I am aware that in a real environment these values ​​would not be public
 
 
 ## Installation
